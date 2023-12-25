@@ -17,10 +17,13 @@ class ProductAdmin(SummernoteModelAdmin):
     summernote_fields = ('subtitle','descriptions')
     inlines=[ProductImageadmin]
 
+class Reviewadmin(SummernoteModelAdmin):
+    summernote_fields = ('review',)
+
 
 admin.site.register(Product,ProductAdmin)
 admin.site.register(Brand)
 #admin.site.register(ProductImage)
-admin.site.register(Review)
+admin.site.register(Review,Reviewadmin)
 
 
