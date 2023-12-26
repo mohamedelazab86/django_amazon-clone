@@ -42,10 +42,19 @@ INSTALLED_APPS = [
     #  my packages
     "taggit",
     'django_summernote', 
+    'rest_framework',
+     'django_filters',
+     'drf_yasg',
 
     # my apps
     'products',
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

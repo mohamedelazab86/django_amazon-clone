@@ -7,9 +7,11 @@ from django.views.generic import ListView,DetailView
 # create crud opertions
 class ProductList(ListView):
     model=Product
+    paginate_by=50
 
 class ProductDetail(DetailView):
     model=Product
+    
 
 
     def get_context_data(self, **kwargs):
@@ -22,6 +24,7 @@ class ProductDetail(DetailView):
 
 class BrandList(ListView):
     model=Brand
+    paginate_by=30
 
 class BrandDetail(DetailView):
     model=Brand
